@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.properteasehactivate.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_packingandlodging"
+            app:destination="@id/packingandlodging" />
+        <action
+            android:id="@+id/action_home2_to_notification"
+            app:destination="@id/notification" />
+        <action
+            android:id="@+id/action_home2_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_home2_to_homegeneral"
+            app:destination="@id/homegeneral" />
+        <action
+            android:id="@+id/action_home2_to_homeverified"
+            app:destination="@id/homeverified" />
+        <action
+            android:id="@+id/action_home2_to_advice"
+            app:destination="@id/advice" />
+    </fragment>
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.properteasehactivate.notification"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.properteasehactivate.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/packingandlodging"
+        android:name="com.example.properteasehactivate.packingandlodging"
+        android:label="fragment_packingandlodging"
+        tools:layout="@layout/fragment_packingandlodging" />
+    <fragment
+        android:id="@+id/advice"
+        android:name="com.example.properteasehactivate.Advice"
+        android:label="fragment_advice"
+        tools:layout="@layout/fragment_advice" />
+    <fragment
+        android:id="@+id/homegeneral"
+        android:name="com.example.properteasehactivate.homegeneral"
+        android:label="fragment_homegeneral"
+        tools:layout="@layout/fragment_homegeneral" />
+    <fragment
+        android:id="@+id/homeverified"
+        android:name="com.example.properteasehactivate.homeverified"
+        android:label="fragment_homeverified"
+        tools:layout="@layout/fragment_homeverified" />
+    <fragment
+        android:id="@+id/premium"
+        android:name="com.example.properteasehactivate.premium"
+        android:label="fragment_premium"
+        tools:layout="@layout/fragment_premium" />
+    <fragment
+        android:id="@+id/post2"
+        android:name="com.example.properteasehactivate.post"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
+</navigation>
