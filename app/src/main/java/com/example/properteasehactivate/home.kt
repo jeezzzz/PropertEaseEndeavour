@@ -1,6 +1,8 @@
 package com.example.properteasehactivate
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -57,10 +59,7 @@ class home : Fragment() {
         advice.setOnClickListener{
             findNavController().navigate(R.id.action_home2_to_advice)
         }
-        val valueformoney=view.findViewById<TextView>(R.id.valueformoneytxt)
-        valueformoney.setOnClickListener{
 
-        }
         val houseview=view.findViewById<CardView>(R.id.houseview1)
         houseview.setOnClickListener{
             findNavController().navigate(R.id.action_home2_to_homegeneral)
@@ -69,6 +68,17 @@ class home : Fragment() {
         houseviewverified.setOnClickListener{
             findNavController().navigate(R.id.action_home2_to_homeverified)
         }
+        val vmoney=view.findViewById<TextView>(R.id.valueformoney)
+        vmoney.setOnClickListener{
+            findNavController().navigate(R.id.action_home2_to_valuemoney)
+        }
+        val rateprid=view.findViewById<TextView>(R.id.ratepredictiontxt)
+        rateprid.setOnClickListener{
+            val browserIntent = Intent(Intent.ACTION_VIEW)
+            browserIntent.data = Uri.parse("http://172.16.1.152:8502/")
+            startActivity(browserIntent)
+        }
+
    return view
     }
 

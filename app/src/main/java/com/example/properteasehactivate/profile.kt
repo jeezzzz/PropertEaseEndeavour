@@ -1,10 +1,14 @@
 package com.example.properteasehactivate
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,32 @@ class profile : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view= inflater.inflate(R.layout.fragment_profile, container, false)
+        val shubh=view.findViewById<Button>(R.id.appCompatButton2)
+        shubh.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://linktr.ee/shubh_agarwal_19")
+            startActivity(intent)
+        }
+        val ajeesh=view.findViewById<Button>(R.id.appCompatButton4)
+        ajeesh.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://linktr.ee/jeezzzz")
+            startActivity(intent)
+        }
+        val sarthak=view.findViewById<Button>(R.id.appCompatButton3)
+        sarthak.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://linktr.ee/sarthak.2226cse1024?ltsid=5d6de11e-95af-473c-9747-7bb086686af8")
+            startActivity(intent)
+        }
+        val navneet=view.findViewById<Button>(R.id.appCompatButton)
+        navneet.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://linktr.ee/Codewithnavy")
+            startActivity(intent)
+        }
+        return view
     }
 
     companion object {
