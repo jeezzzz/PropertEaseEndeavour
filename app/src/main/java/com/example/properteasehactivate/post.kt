@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +22,16 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class post : Fragment() {
+    private lateinit var Name: EditText
+    private lateinit var phoneno: EditText
+    private lateinit var adress: EditText
+    private lateinit var area: EditText
+    private lateinit var price: EditText
+    private lateinit var bhk: EditText
+    private lateinit var park: EditText
+    private lateinit var save: Button
+
+    private lateinit var dbRef: DatabaseReference
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,8 +52,90 @@ class post : Fragment() {
 
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_post, container, false)
+        val view= inflater.inflate(R.layout.fragment_post, container, false)
+//write your code here
+        Name = view.findViewById(R.id.ownerName)
+        phoneno = view.findViewById(R.id.Contactno)
+        adress = view.findViewById(R.id.Address)
+        area = view.findViewById(R.id.Size)
+        price = view.findViewById(R.id.Price)
+        bhk = view.findViewById(R.id.BHK)
+        park = view.findViewById(R.id.Parking)
+        save = view.findViewById(R.id.Save)
 
+        dbRef = FirebaseDatabase.getInstance().getReference("Owners")
+
+        save.setOnClickListener {
+            saveOwnerData()
+            Toast.makeText(requireContext(), "Details Saved", Toast.LENGTH_LONG).show()
+
+            Name.text.clear()
+            phoneno.text.clear()
+            adress.text.clear()
+            area.text.clear()
+            price.text.clear()
+            bhk.text.clear()
+            park.text.clear()
+        }
+
+        return view
+    }
+    private fun saveOwnerData() {
+        val pname = Name.text.toString()
+        val number = phoneno.text.toString()
+        val adres = adress.text.toString()
+        val areas = area.text.toString()
+        val cost = price.text.toString()
+        val spaceing = bhk.text.toString()
+        val parking = park.text.toString()
+
+        if (pname.isEmpty()) {
+            Name.error = "Field Required"
+            return
+        }
+        if (number.isEmpty()) {
+            phoneno.error = "Field Required"
+            return
+        }
+        if (adres.isEmpty()) {
+            adress.error = "Field Required"
+            return
+        }
+        if (areas.isEmpty()) {
+            area.error = "Field Required"
+            return
+        }
+        if (cost.isEmpty()) {
+            price.error = "Field Required"
+            return
+        }
+        if (spaceing.isEmpty()) {
+            bhk.error = "Field Required"
+            return
+        }
+        if (parking.isEmpty()) {
+            park.error = "Field Required"
+            return
+        }
+
+        val ownerid = dbRef.push().key!!
+        val owner = OwnerModel(ownerid, pname, number, adres, areas, cost, spaceing, parking)
+
+        dbRef.child(ownerid).setValue(owner)
+            .addOnCompleteListener {
+                Toast.makeText(requireContext(), "Details Saved", Toast.LENGTH_LONG).show()
+
+                Name.text.clear()
+                phoneno.text.clear()
+                adress.text.clear()
+                area.text.clear()
+                price.text.clear()
+                bhk.text.clear()
+                park.text.clear()
+            }
+            .addOnFailureListener { err ->
+                Toast.makeText(requireContext(), "Error ${err.message}", Toast.LENGTH_LONG).show()
+            }
     }
 
     companion object {

@@ -12,12 +12,7 @@
            android:background="@color/white"
            android:layout_height="match_parent"
            tools:context=".homeverified"
-           tools:ignore="ExtraText"><![CDATA[
-           >
-
-
-
-           ]]>
+           tools:ignore="ExtraText">
 
            <TextView
                android:id="@+id/textView6"
@@ -35,10 +30,11 @@
 
            <ImageView
                android:id="@+id/imageView"
-               android:layout_width="wrap_content"
+               android:layout_width="match_parent"
                android:layout_height="300dp"
                android:scaleType="fitXY"
                android:src="@drawable/house1"
+               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintLeft_toLeftOf="parent"
                app:layout_constraintTop_toTopOf="parent"></ImageView>
 
@@ -138,6 +134,7 @@ Ghaziabad-201206"
                app:layout_constraintTop_toBottomOf="@+id/imageView"></androidx.appcompat.widget.AppCompatButton>
 
            <androidx.appcompat.widget.AppCompatButton
+               android:id="@+id/explore3d"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="48dp"

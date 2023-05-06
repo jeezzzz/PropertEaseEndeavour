@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/premium"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".premium">
-
+    tools:context=".like">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".premium">
+        tools:context=".like">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -44,7 +42,7 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/artifika"
                     android:gravity="center"
-                    android:text="Premium"
+                    android:text="Like"
                     android:textColor="@color/black"
                     android:textSize="30dp"
                     android:textStyle="bold"
@@ -55,55 +53,22 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <ScrollView
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/artifika"
+            android:text="Coming Soon"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topPaneln">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+            app:layout_constraintTop_toBottomOf="@+id/topPaneln"
+            app:layout_constraintVertical_bias="0.462"
+            tools:layout_editor_absoluteY="333dp"></TextView>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/premium1"
-        app:layout_constraintTop_toBottomOf="@+id/topPaneln"
-        tools:layout_editor_absoluteX="0dp"></ImageView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BUY NOW"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/orange"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        ></Button>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/premium2"
-        android:layout_marginTop="30dp"
-        tools:layout_editor_absoluteX="0dp"></ImageView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BUY NOW"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/orange"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="100dp"
-        ></Button>
-
-
-</LinearLayout>
-        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

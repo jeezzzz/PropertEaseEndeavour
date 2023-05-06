@@ -28,6 +28,21 @@
         <action
             android:id="@+id/action_home2_to_advice"
             app:destination="@id/advice" />
+        <action
+            android:id="@+id/action_home2_to_valuemoney"
+            app:destination="@id/valuemoney" />
+        <action
+            android:id="@+id/action_home2_to_premium"
+            app:destination="@id/premium" />
+        <action
+            android:id="@+id/action_home2_to_post2"
+            app:destination="@id/post2" />
+        <action
+            android:id="@+id/action_home2_to_ratePrediction"
+            app:destination="@id/ratePrediction" />
+        <action
+            android:id="@+id/action_home2_to_futureRatePrediction"
+            app:destination="@id/futureRatePrediction" />
     </fragment>
     <fragment
         android:id="@+id/notification"
@@ -68,5 +83,24 @@
         android:id="@+id/post2"
         android:name="com.example.properteasehactivate.post"
         android:label="fragment_post"
-        tools:layout="@layout/fragment_post" />
+        tools:layout="@layout/fragment_post">
+        <action
+            android:id="@+id/action_premium_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/valuemoney"
+        android:name="com.example.properteasehactivate.valuemoney"
+        android:label="fragment_valuemoney"
+        tools:layout="@layout/fragment_valuemoney" />
+    <fragment
+        android:id="@+id/ratePrediction"
+        android:name="com.example.properteasehactivate.ratePrediction"
+        android:label="fragment_rate_prediction"
+        tools:layout="@layout/fragment_rate_prediction" />
+    <fragment
+        android:id="@+id/futureRatePrediction"
+        android:name="com.example.properteasehactivate.futureRatePrediction"
+        android:label="fragment_future_rate_prediction"
+        tools:layout="@layout/fragment_future_rate_prediction" />
 </navigation>

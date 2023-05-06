@@ -43,7 +43,7 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/artifika"
                     android:gravity="center"
-                    android:text="Packing and Loading"
+                    android:text="Future Prediction"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:textStyle="bold"
@@ -54,21 +54,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/artifika"
-            android:text="Coming Soon"
-            android:textColor="@color/black"
-            android:textSize="35dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <WebView
+            android:id="@+id/webViewtxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topPaneln"
-            app:layout_constraintVertical_bias="0.462"></TextView>
-
+            app:layout_constraintTop_toBottomOf="@+id/topPaneln" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

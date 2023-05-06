@@ -1,10 +1,14 @@
 package com.example.properteasehactivate
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +40,20 @@ class homegeneral : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homegeneral, container, false)
+        val view= inflater.inflate(R.layout.fragment_homegeneral, container, false)
+        val contact=view.findViewById<Button>(R.id.contactbutton)
+        contact.setOnClickListener{
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:9369485558")
+            startActivity(intent)
+        }
+        val locate=view.findViewById<ImageView>(R.id.map)
+        locate.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.google.com/maps/search/kiet/@28.753128,77.4968778,19.57z")
+            startActivity(intent)
+        }
+        return view
     }
 
     companion object {
