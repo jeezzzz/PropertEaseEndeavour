@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27763465066",
+    "project_id": "propertease-e1364",
+    "storage_bucket": "propertease-e1364.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27763465066:android:e01b37501063d6a8d0a313",
+        "android_client_info": {
+          "package_name": "com.example.properteasehactivate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27763465066-rto84qpog6a37sjgtblret18osr5u806.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT00bHnGyGeEXM8A_B2CZMZJR5kGK7dUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27763465066-rto84qpog6a37sjgtblret18osr5u806.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
